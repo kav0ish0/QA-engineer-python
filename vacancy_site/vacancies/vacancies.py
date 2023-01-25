@@ -37,10 +37,7 @@ def get_yesterday_vacancies():
         else:
             salary = ''
 
-        skills = []
-        for skill in vacancy['key_skills']:
-            skills.append(skill['name'])
-        skills = ", ".join(skills)
+        skills = ', '.join([skill['name'] for skill in vacancy['key_skills']])
 
         fields.update({"name": vacancy['name'],
                        "key_skills": skills,

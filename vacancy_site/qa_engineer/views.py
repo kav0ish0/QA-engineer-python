@@ -1,13 +1,13 @@
 from django.shortcuts import render
-from django.template import Template
 from vacancies.vacancies import get_yesterday_vacancies
 from .models import Post
 
 
 def get_content(name: str):
-    content = \
-        {'content': Post.objects.filter(title=name).first(),
-         'title': name}
+    content = {
+        'content': Post.objects.filter(title=name).first(),
+        'title': name
+    }
     return content
 
 
